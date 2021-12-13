@@ -1,12 +1,7 @@
 @testable import SwiftPlot
 import Foundation
 import SVGRenderer
-#if canImport(AGGRenderer)
-import AGGRenderer
-#endif
-#if canImport(QuartzRenderer)
-import QuartzRenderer
-#endif
+
 
 @available(tvOS 13, watchOS 13, *)
 extension AnnotationTests {

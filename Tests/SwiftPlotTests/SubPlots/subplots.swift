@@ -1,12 +1,7 @@
 import Foundation
 import SwiftPlot
 import SVGRenderer
-#if canImport(AGGRenderer)
-import AGGRenderer
-#endif
-#if canImport(QuartzRenderer)
-import QuartzRenderer
-#endif
+
 
 @available(tvOS 13.0, watchOS 6.0, *)
 extension SubPlotTests {
