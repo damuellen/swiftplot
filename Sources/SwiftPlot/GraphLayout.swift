@@ -14,7 +14,7 @@ public enum LegendIcon {
 ///
 public struct GraphLayout {
     // Inputs.
-    var backgroundColor: Color = .white
+    var backgroundColor: Color = .transparent
     var plotBackgroundColor: Color?
     var plotTitle = PlotTitle()
     var plotLabel  = PlotLabel()
