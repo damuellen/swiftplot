@@ -48,7 +48,7 @@ public struct SubPlot: Plot {
         return results
     }
     
-    public func drawGraph(size: Size, renderer: Renderer) {
+    public func drawGraph(size: Size, renderer: Renderer = SVGRenderer()) {
         let layoutPlan = calculateLayoutPlan(plotSize: size)
         for index in 0..<plots.count {
             renderer.withAdditionalOffset(layoutPlan.plotLocations[index]) { renderer in

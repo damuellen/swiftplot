@@ -5,20 +5,13 @@ import PackageDescription
 
 let platformTargets: [Target] = [
     .target(name: "SwiftPlot"),
-    .target(
-        name: "SVGRenderer",
-        dependencies: ["SwiftPlot"]),
-    
     .testTarget(
       name: "SwiftPlotTests",
-      dependencies: ["SVGRenderer", "SwiftPlot"])
+      dependencies: ["SwiftPlot"])
 ]
 let platformProducts: [Product] =  [
   .library(name: "SwiftPlot", targets: ["SwiftPlot"]),
-  .library(name: "SVGRenderer", targets: ["SVGRenderer"]),
-
 ]
-
 
 let package = Package(
     name: "SwiftPlot",

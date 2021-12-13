@@ -13,7 +13,7 @@ public protocol Plot {
 extension Plot {
    
     /// Draws to the given renderer in-memory at a default size.
-    public func drawGraph(renderer: Renderer) {
+    public func drawGraph(renderer: Renderer = SVGRenderer()) {
         drawGraph(size: Size(width: 1000, height: 660),
                   renderer: renderer)
     }
@@ -21,7 +21,7 @@ extension Plot {
     /// Draws and saves the graph to the named file.
     /// - note: This function changes the `imageSize` of the `Renderer` it is given.
     public func drawGraphAndOutput(size: Size = Size(width: 1000, height: 660),
-                                   fileName name: String = "swiftplot_graph", renderer: Renderer) throws {
+                                   fileName name: String = "swiftplot_graph", renderer: Renderer = SVGRenderer()) throws {
         renderer.imageSize = size
         drawGraph(size: size, renderer: renderer)
         try renderer.drawOutput(fileName: name)
@@ -30,7 +30,7 @@ extension Plot {
     /// Saves the already-drawn graph to the named file.
     /// - note: This function changes the `imageSize` of the `Renderer` it is given.
     public func drawGraphOutput(size: Size = Size(width: 1000, height: 660),
-                                fileName name: String = "swiftplot_graph", renderer: Renderer) throws {
+                                fileName name: String = "swiftplot_graph", renderer: Renderer = SVGRenderer()) throws {
         renderer.imageSize = size
         try renderer.drawOutput(fileName: name)
     }
