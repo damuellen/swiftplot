@@ -30,9 +30,9 @@ public class SVGRenderer: Renderer{
                                  count: BarGraphSeriesOptions.Hatching.allCases.count)
 
     var lines: [String] = []
-    var fontFamily: String = "Roboto"
+    var fontFamily: String = "Arial"
 
-    public init(width w: Float = 1000, height h: Float = 660, fontFamily: String = "Roboto") {
+    public init(width w: Float = 1000, height h: Float = 660, fontFamily: String = "Arial") {
         self.imageSize = Size(width: w, height: h)
         self.fontFamily = fontFamily
     }
@@ -247,7 +247,7 @@ public class SVGRenderer: Renderer{
         let image = self.svg
 
         let url = URL(fileURLWithPath: "\(name).svg")
-        try image.write(to: url, atomically: true, encoding: .utf8)
+        try image.write(to: url, atomically: false, encoding: .utf8)
     }
 
 }
